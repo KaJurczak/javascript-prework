@@ -1,5 +1,8 @@
 const  myGame = function() {
 
+  let playerScore = 0;
+  let computerScore = 0;
+
   const playGame = function(playerInput){
 
     clearMessages();
@@ -39,6 +42,7 @@ const  myGame = function() {
     printMessage('Twój ruch to: ' + argPlayerMove);
 
 
+
     const displayResult = function(argComputerMove, argPlayerMove){
       console.log('wybory:', argComputerMove, argPlayerMove);
       //printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -46,14 +50,18 @@ const  myGame = function() {
         (argComputerMove == 'papier' && argPlayerMove == 'nożyce') ||
         (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')) {
         printMessage('Ty wygrywasz!');
+        playerScore += 1;
       } else if (argComputerMove === argPlayerMove) {
         printMessage('Remis');
       } else {
         printMessage('Komputer wygrywa!');
+        computerScore += 1;
       }
     }
 
     displayResult(argComputerMove, argPlayerMove);
+
+    printMessage("wynik gracza = " + playerScore + ", wynik komputera = " + computerScore);
   }
 
 const buttonClickedRock = function(){
@@ -88,22 +96,3 @@ buttonScissors.addEventListener('click', buttonClickedScissors);
 }
 
 myGame();
-
-/*
-function playResult(){
-  console.log('funkcja dziala');
-  if (displayResult() == 'Ty wygrywasz!');
-  //var uzytkownik = 1;
-  console.log('dziala?');
-}
-
-playResult();
-
-/*
-var result = 0;
-
-for(var i=0; i<=10; i++); {
-  result+=i;
-}
-  console.log(result);
-*/
