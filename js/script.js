@@ -1,10 +1,10 @@
-function myGame() {
+const  myGame = function() {
 
-  function playGame(playerInput){
+  const playGame = function(playerInput){
 
     clearMessages();
 
-    function getMoveName(argMoveId){
+    const getMoveName = function(argMoveId){
       if(argMoveId == 1){
         return 'kamień';
       }
@@ -39,7 +39,7 @@ function myGame() {
     printMessage('Twój ruch to: ' + argPlayerMove);
 
 
-    function displayResult(argComputerMove, argPlayerMove){
+    const displayResult = function(argComputerMove, argPlayerMove){
       console.log('wybory:', argComputerMove, argPlayerMove);
       //printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
       if((argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
@@ -56,17 +56,17 @@ function myGame() {
     displayResult(argComputerMove, argPlayerMove);
   }
 
-function buttonClickedRock(){
+const buttonClickedRock = function(){
   console.log('funkcja zadzialala, kliknieto guzik kamol');
   playGame(1);
 }
 
-function buttonClickedPaper(){
+const buttonClickedPaper = function(){
   console.log('funkcja zadzialala, kliknieto guzik papiren');
   playGame(2);
 }
 
-function buttonClickedScissors(){
+const buttonClickedScissors = function(){
   console.log('funkcja zadzialala, kliknieto guzik ciachCiach');
   playGame(3);
 }
